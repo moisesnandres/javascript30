@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import "day-01.css";
 @import "day-02.css";
+@import "day-03.css";
 
 body {
   font-family: "Roboto", sans-serif;

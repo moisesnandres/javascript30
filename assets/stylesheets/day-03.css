@@ -1,0 +1,52 @@
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+}
+
+.day-3 {
+  text-align: center;
+  background: #193549;
+  color: white;
+  font-weight: 100;
+  font-size: 24px;
+}
+
+.day-3 .controls {
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.day-3 .control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.day-3 .control label {
+  flex-basis: 150px;
+}
+
+.day-3 .control input {
+  flex: 1;
+}
+
+.day-3 input[type="color"] {
+  border: none;
+  padding: 4px;
+}
+
+.day-3 img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+  width: 90%;
+  margin-top: 50px;
+}
+
+.h1 {
+  color: var(--base);
+}
