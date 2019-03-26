@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../assets/stylesheets/styles.css" />
+    <title>12 - Key Sequence Detection (KONAMI CODE)</title>
+  </head>
+  <body>
+    <script>
+      const pressed = [];
+      const secretCode = "arctic";
+      window.addEventListener("keyup", ev => {
+        console.log(ev.key);
+        pressed.push(ev.key);
+        pressed.splice(
+          -secretCode.length - 1,
+          pressed.length - secretCode.length
+        );
+        console.log(pressed);
+        if (pressed.join("").includes(secretCode)) {
+          console.log("%c🐒🤟", "font-size: 40px");
+          console.log(
+            "%cArctic Monkeys - Lima 26/03",
+            "color: #dddddd; font-size: 30px"
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
