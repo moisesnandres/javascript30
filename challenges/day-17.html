@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../assets/stylesheets/styles.css" />
+    <title>17 - Sorting Band Names without articles</title>
+  </head>
+  <body class="day-17">
+    <ul id="bands"></ul>
+    <script>
+      const bands = [
+        "The Plot in You",
+        "The Devil Wears Prada",
+        "Pierce the Veil",
+        "Norma Jean",
+        "The Bled",
+        "Say Anything",
+        "The Midway State",
+        "We Came as Romans",
+        "Counterparts",
+        "Oh, Sleeper",
+        "A Skylit Drive",
+        "Anywhere But Here",
+        "An Old Dog"
+      ];
+
+      const sortedBands = bands.sort((a, b) => {
+        aWithoutArticle = a.replace(/^(a|the|an)\s/i, "");
+        bWithoutArticle = b.replace(/^(a|the|an)\s/i, "");
+        return aWithoutArticle > bWithoutArticle;
+      });
+
+      document.querySelector("#bands").innerHTML = sortedBands
+        .map(band => `<li>${band}</li>`)
+        .join("");
+    </script>
+  </body>
+</html>
