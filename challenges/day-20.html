@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../assets/stylesheets/styles.css" />
+    <title>20 - Native Speech Recognition</title>
+  </head>
+  <body class="day-20">
+    <div class="words" contenteditable></div>
+    <script>
+      window.SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      const recognition = new SpeechRecognition();
+      recognition.interimResults = true;
+
+      let p = document.createElement("p");
+      const words = document.querySelector(".words");
+      words.appendChild(p);
+
+      recognition.addEventListener("result", ev => {
+        const transcript = Array.from(ev.results)
+          .map(result => result[0])
+          .map(result => result.transcript)
+          .join("");
+
+        p.textContent = transcript;
+        if (ev.results[0].isFinal) {
+          p = document.createElement("p");
+          words.appendChild(p);
+        }
+      });
+
+      recognition.addEventListener("end", recognition.start);
+
+      recognition.start();
+    </script>
+  </body>
+</html>
