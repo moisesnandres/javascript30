@@ -1,0 +1,16 @@
+.day-25 div {
+  width: 100%;
+  padding: 100px;
+}
+
+.day-25 .one {
+  background: thistle;
+}
+
+.day-25 .two {
+  background: mistyrose;
+}
+
+.day-25 .three {
+  background: coral;
+}

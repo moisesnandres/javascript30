@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../assets/stylesheets/styles.css" />
+    <title>25 - Event Capture, Propagation, Bubbling and Once</title>
+  </head>
+  <body class="day-25">
+    <div class="one">
+      <div class="two">
+        <div class="three"></div>
+      </div>
+    </div>
+    <script>
+      const divs = document.querySelectorAll("div");
+
+      function logText(ev) {
+        console.log(this.classList.value);
+        ev.stopPropagation();
+      }
+
+      divs.forEach(div =>
+        div.addEventListener("click", logText, { capture: false, once: true })
+      );
+    </script>
+  </body>
+</html>
